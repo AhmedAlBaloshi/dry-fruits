@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-light mb-5">
+  <div class="container-fluid">
+    <button class="navbar-toggler ms-2" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand logo-font d-block d-md-none" [routerLink]="'/'">
+      <img src="../../assets/img/logo.png" alt="" width="60" height="50">Dry Fruits
+    </a>
+    <a [routerLink]="'cart'" class="float-end text-dark mt-3 position-relative d-block d-md-none me-3">
+      <i class="icon fab fa-opencart fa-lg"></i>
+      <span class="total-item badge rounded-pill position-absolute top-0 start-100 translate-middle"
+        style="background-color: #f4a56d;"></span>
+    </a>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-center"
+      id="navbarSupportedContent">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item">
+          <a class="nav-link text-dark fw-bold" aria-current="page" [routerLink]="'/'"
+            (click)="isMenuCollapsed = true">HOME</a>
+        </li>
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle fw-bold text-dark" id="dropdownBasic1" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            DRY FRUITS
+          </a>
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarDropdown">
+            <li><a ngbDropdownItem [routerLink]="'dry-fruit/almond'" (click)="isMenuCollapsed = true">Almond</a></li>
+            <li><a ngbDropdownItem [routerLink]="'dry-fruit/cashew'" (click)="isMenuCollapsed = true">Cashew</a></li>
+            <li><a ngbDropdownItem [routerLink]="'dry-fruit/anjeer'" (click)="isMenuCollapsed = true">Anjeer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-dark" [routerLink]="'contact'" (click)="isMenuCollapsed = true">CONTACT US
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-dark home" [routerLink]="'about'" (click)="isMenuCollapsed = true">ABOUT
+            US</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,13 @@
+.ul-list {
+    list-style: none;
+    margin: 10px;
+}
+
+.ul-list .li-list:before {
+    margin-left: -40px;
+    content: "✓";
+}
+
+h3 {
+    color: #f4a56d;
+}

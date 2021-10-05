@@ -1,0 +1,127 @@
+  <div class="d-flex justify-content-center mt-5" *ngIf="!product;else main">
+      <h1><i class="fas fa-exclamation-triangle"></i> Product Not Found</h1>
+    </div>
+    <ng-template #main>
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{{ product?.image }}" class="border rounded img-fluid" height="" alt="">
+          </div>
+          <div class="col-lg-6">
+            <p> <span class="span">in stock</span></p>
+            <h2 class="fw-bold mt-3">{{ product?.name }}</h2>
+            <h6 class="mt-3">Vendor: Organic</h6>
+            <h3 class="fw-bold mt-3">Rs {{ product?.price }}</h3>
+            <p class="fw-bold mt-3">Kg: <span class="fw-light">1Kg</span></p>
+            <a class="add-to-cart btn button mt-5 float-end" (click)="addToCart(product)"> <i class="fab fa-opencart"></i> Add To Cart</a>
+          </div>
+        </div>
+        <hr class="mt-5">
+      </div>
+      <div class="container mt-5 mb-5">
+        <ul class="nav nav-tabs ul" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link fs-3 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+              role="tab" aria-controls="home" aria-selected="true">Discription</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link fs-3" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+              role="tab" aria-controls="profile" aria-selected="false">Nutrition</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <h3 class="fw-bold mt-5">Benefits of almonds</h3>
+            <h5 class="mt-4 fw-bold">1) Almonds and cholestrol</h5>
+            <p class="mt-3">Almonds are high in fat, but it is unsaturated fat. This type of fat does not increase the
+              risk
+              of
+              low-density lipoprotein (LDL) or “bad” cholesterol.</p>
+            <p>In moderation, the American Heart Association (AHA) note that unsaturated fats may improve a person’s blood
+              cholesterol status.</p>
+            <h5 class="mt-4 fw-bold">2) Almonds and vitamin E</h5>
+            <p class="mt-3">Almonds contain relatively high levels of vitamin E. Vitamin E contains antioxidants, such as
+              tocopherol. One ounceTrusted Source (28.4 g) of plain almonds provides 7.27 milligrams (mg) of vitamin E,
+              which
+              is around halfTrusted Source
+              a person’s daily requirement</p>
+            <p>Vitamin E and other antioxidants help prevent oxidative damage in the body. This damage can occur when too
+              many
+              free radicals accumulate.</p>
+            <h5 class="fw-bold mt-3">3) Almonds and blood sugar</h5>
+            <p class="mt-3">Many people with type 2 diabetes have low magnesium levels. A deficiency is common among those
+              who
+              have difficulty managing their blood sugar levels. Scientists have suggestedTrusted Source there may be a
+              link
+              between magnesium deficiency
+              and insulin resistance.</p>
+            <p>Some experts suggest using magnesium supplements to improve blood sugar profiles, but almonds may offer a
+              suitable dietary source instead.</p>
+            <h5 class="fw-bold mt-3">4) Almonds help manage weight</h5>
+            <p class="mt-3">According to researchTrusted Source appearing in 2015, eating almonds as a mid-morning snack
+              can
+              leave a person feeling full for some time. People consumed either 28 g (173 calories) or 42 g (259
+              calories).
+              The extent to which the participants’
+              appetites remained low was dependent on the quantity of almonds they consumed.</p>
+            <p>Feeling full can help people lose weight, as they will be less tempted to seek more snacks.</p>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <h3 class="fw-bold mt-5">Nutrition</h3>
+            <table class="table table-striped mt-3">
+              <tr>
+                <th>Nutrient</th>
+                <th>Amount in 1 ounce</th>
+                <th>Daily adult requirement</th>
+              </tr>
+              <tr>
+                <td>Energy(calories)</td>
+                <td>164</td>
+                <td>1,800-3,000</td>
+              </tr>
+              <tr>
+                <td>Carbohydrate (g)</td>
+                <td>6.1 including 1.2 g of sugar</td>
+                <td>130</td>
+              </tr>
+              <tr>
+                <td>Fat (g)</td>
+                <td>14.2, of which 12.4 g is unsaturated</td>
+                <td>20%-35% of daily clories</td>
+              </tr>
+              <tr>
+                <td>Fiber (g)</td>
+                <td>3.5</td>
+                <td>25.2-30.8</td>
+              </tr>
+              <tr>
+                <td>Protein (g)</td>
+                <td>6.0</td>
+                <td>46-56</td>
+              </tr>
+              <tr>
+                <td>Calcium (mg)</td>
+                <td>76.3</td>
+                <td>1,000-1,200</td>
+              </tr>
+              <tr>
+                <td>Vitamin E (mg)</td>
+                <td>7.27</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>Potassium (mg)</td>
+                <td>208</td>
+                <td>4,700</td>
+              </tr>
+              <tr>
+                <td>Cholesterol</td>
+                <td>0</td>
+                <td>No data</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  

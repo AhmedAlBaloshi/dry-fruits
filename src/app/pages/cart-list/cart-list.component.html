@@ -1,0 +1,37 @@
+<div class="row mb-4">
+    <div class="col-6">
+      <h5 class="mb-3">Cart</h5>
+    </div>
+    <div class="col-6">
+      <button class="btn add-to-cart float-right" (click)="clearCart()"> Clear All </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="w-100 d-flex justify-content-center mt-5" *ngIf="items.length == 0;else main">
+      <h1><i class="fas fa-exclamation-triangle"></i> Cart is empty</h1>
+    </div>
+    <ng-template #main>
+      <ng-container *ngFor="let item of items;let i = index">
+        <div class="col-12 show-cart">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-3"></div>
+                <div class="col-9"></div>
+              </div>
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">Price : Rs <span class="total-cart"> {{ item.price }}</span> </p>
+              <p class="card-text">Total Price : Rs <span class="total-cart">{{ item.price * item.qty }}</span>
+              </p>
+              <div class="input-group" role="group" aria-label="Basic outlined example">
+                <button type="button" (click)="addQty(item.id)" class="btn btn-outline-dark">+</button>
+                <input type="number" class="text-center input-outline-dark" disabled value="{{ item.qty }}">
+                <button type="button" (click)="subQty(item.id, item.qty)" class="btn btn-outline-dark">-</button>
+                <button type="button" class="btn btn-danger mx-1" (click)="deleteCartItem(i)">X</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-template>
+  </div>
