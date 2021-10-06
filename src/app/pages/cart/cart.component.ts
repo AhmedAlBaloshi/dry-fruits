@@ -16,7 +16,6 @@ export class CartComponent implements OnInit {
     private cartServ: CartService
   ) {
     this.cartServ.items$.subscribe((item) => {
-  
       if (item.length != 0) {
         this.totalPrice = 0;
         item.forEach(item => {
@@ -32,5 +31,4 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   }
- 
 }

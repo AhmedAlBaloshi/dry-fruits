@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-    <app-cart-list></app-cart-list>
+      <app-cart-list></app-cart-list>
     </div>
     <div class="col-lg-4 mt-4">
       <h5 class="mb-3" style="color: white;">The total </h5>
@@ -11,7 +11,9 @@
           <p class="card-text">Total Items : <span class="total-item">{{ totalItems }}</span></p>
           <p class="card-text">Total Price : Rs <span class="total-cart">{{ totalPrice }}</span> </p>
           <p class="card-text"></p>
-          <a [routerLink]="'/check-out'" class="add-to-cart btn button">Order Now</a>
+          <ng-container *ngIf="totalItems > 0">
+            <a [routerLink]="'/check-out'" class="add-to-cart btn button">Order Now</a>
+          </ng-container>
         </div>
       </div>
     </div>
